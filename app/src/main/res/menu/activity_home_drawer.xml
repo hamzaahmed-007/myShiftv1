@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+
+    >
+
+    <group android:checkableBehavior="single">
+
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_myShifts"
+            android:icon="@drawable/ic_work_black_24dp"
+            android:title="My Shifts" />
+        <item
+            android:id="@+id/nav_postshift"
+            android:icon="@drawable/ic_add_circle_black_24dp"
+            android:title="Post Shift" />
+        <item
+            android:id="@+id/nav_viewshifts"
+            android:icon="@drawable/ic_whatshot_black_24dp"
+            android:title="View Available Shifts" />
+
+    </group>
+
+
+
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@android:drawable/ic_lock_power_off"
+                android:title="Logout" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+
+
+
+</menu>
