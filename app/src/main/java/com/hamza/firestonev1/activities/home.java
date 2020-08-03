@@ -164,7 +164,7 @@ public class home extends AppCompatActivity
                     finish();
                     return true;
                 case R.id.nav_search:
-                    Intent searchIntent = new Intent(getApplicationContext(), CalenderActivity.class);
+                    Intent searchIntent = new Intent(getApplicationContext(), SearchActivity.class);
                     startActivity(searchIntent);
                     finish();return true;
                 case R.id.nav_post:
@@ -270,7 +270,7 @@ public class home extends AppCompatActivity
             finish();
 
         } else if (id == R.id.nav_viewshifts) {
-            Intent viewIntent = new Intent(getApplicationContext(), CalenderActivity.class);
+            Intent viewIntent = new Intent(getApplicationContext(), SearchActivity.class);
             startActivity(viewIntent);
             finish();
 

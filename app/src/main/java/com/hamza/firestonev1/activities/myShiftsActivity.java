@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -126,7 +124,7 @@ public class myShiftsActivity extends AppCompatActivity {
                     finish();
                     return true;
                 case R.id.nav_search:
-                    Intent searchIntent = new Intent(getApplicationContext(), CalenderActivity.class);
+                    Intent searchIntent = new Intent(getApplicationContext(), SearchActivity.class);
                     startActivity(searchIntent);
                     finish();return true;
                 case R.id.nav_post:

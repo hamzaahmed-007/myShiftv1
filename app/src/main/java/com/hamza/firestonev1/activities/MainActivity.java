@@ -62,6 +62,41 @@ public class MainActivity extends AppCompatActivity {
     private CollectionReference myCol = FirebaseFirestore.getInstance().collection("newShifts");
 
 
+    private BottomNavigationView.OnNavigationItemSelectedListener mONListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.nav_home:
+                    Intent homeIntent = new Intent(getApplicationContext(), home.class);
+                    startActivity(homeIntent);
+                    finish();
+                    return true;
+                case R.id.nav_search:
+                    Intent searchIntent = new Intent(getApplicationContext(), SearchActivity.class);
+                    startActivity(searchIntent);
+                    finish();
+                    return true;
+                case R.id.nav_post:
+                    Intent postIntent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(postIntent);
+                    finish();
+
+                    return true;
+                case R.id.nav_my:
+                    Intent myIntent = new Intent(getApplicationContext(), myShiftsActivity.class);
+                    myIntent.putExtra("username", personName);
+                    startActivity(myIntent);
+                    return true;
+                case R.id.nav_about:
+                    Intent aboutintent = new Intent(getApplicationContext(), AboutAcitivity.class);
+                    startActivity(aboutintent);
+                    return true;
+            }
+            return false;
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         editID = findViewById(R.id.editID);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Post your Shifts");
+        getSupportActionBar().setTitle("Post your Shift");
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.nav_bottom);
         bottomNavigationView.setOnNavigationItemSelectedListener(mONListener);
@@ -137,40 +172,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    private BottomNavigationView.OnNavigationItemSelectedListener mONListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.nav_home:
-                    Intent homeIntent = new Intent(getApplicationContext(), home.class);
-                    startActivity(homeIntent);
-                    finish();
-                    return true;
-                case R.id.nav_search:
-                    Intent searchIntent = new Intent(getApplicationContext(), CalenderActivity.class);
-                    startActivity(searchIntent);
-                    finish();return true;
-                case R.id.nav_post:
-                    Intent postIntent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(postIntent);
-                    finish();
-
-                    return true;
-                case R.id.nav_my:
-                    Intent myIntent = new Intent(getApplicationContext(), myShiftsActivity.class);
-                    myIntent.putExtra("username" , personName);
-                    startActivity(myIntent);
-                    return true;
-                case R.id.nav_about:
-                    Intent aboutintent = new Intent(getApplicationContext(), AboutAcitivity.class);
-                    startActivity(aboutintent);
-                    return true;
-            }
-            return false;
-        }
-    };
 
     @Override
     public void onBackPressed() {
@@ -220,11 +221,10 @@ public class MainActivity extends AppCompatActivity {
         {
             String shiftTitle = personEmail+idValue;
 
-            Shifts shifts1 = new Shifts(personName, nameValue, locationValue,dateValue, shiftTitle);
+            Shifts shifts1 = new Shifts(personName, nameValue, locationValue, dateValue, shiftTitle, personEmail);
 
             myCol.document(shiftTitle).set(shifts1);
-            Toast toast = Toast.makeText(this, "New Shift Posted", Toast.LENGTH_LONG);
-            toast.show();
+            showMessage("New Shift Posted!");
             Intent intent = new Intent(getApplicationContext(), home.class);
             startActivity(intent);
 
@@ -243,16 +243,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void openList(View view)
-    {
-
-        editID = findViewById(R.id.editID);
-        String idValue  =editID.getText().toString();
-
-        Intent intent = new Intent(this, ShiftList.class);
-       // intent.putExtra(EXTRA_MESSAGE, idValue);
-        startActivity(intent);
-
-
-    }
 }

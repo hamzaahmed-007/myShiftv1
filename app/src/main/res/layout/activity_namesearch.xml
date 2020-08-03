@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    tools:context=".activities.namesearchActivity">
+
 
     <EditText
-        android:id="@+id/editDateText"
+        android:id="@+id/editNameText"
         android:layout_width="270dp"
         android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/search_btn2"
         android:ems="10"
-        android:hint="Type shift date..."
+        android:hint="Type shift name..."
         android:inputType="textPersonName"
-        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,29 +25,23 @@
         android:id="@+id/buttonDateSearch"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/reg_btn"
-        app:layout_constraintStart_toEndOf="@+id/editDateText"
+        app:layout_constraintStart_toEndOf="@+id/editNameText"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_search" />
 
     <androidx.recyclerview.widget.RecyclerView
-
-        android:id="@+id/rvShifts"
+        android:id="@+id/result_list"
         android:layout_width="match_parent"
         android:layout_height="616dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:clickable="true"
-        android:onClick="toastMethod"
-        android:padding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editDateText" />
+        app:layout_constraintTop_toBottomOf="@+id/editNameText" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_bottom"
@@ -59,9 +52,8 @@
         app:itemHorizontalTranslationEnabled="true"
         app:itemIconTint="@drawable/nav_color"
         app:itemTextColor="@drawable/nav_color"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav"
-        tools:layout_editor_absoluteX="202dp"
-        app:labelVisibilityMode="unlabeled"/>
-
+        tools:layout_editor_absoluteX="202dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

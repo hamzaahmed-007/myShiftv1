@@ -9,6 +9,7 @@ public class Shifts {
     String name;
     String location;
     String ShiftID;
+    String email;
 
 
     public String getShiftID() {
@@ -35,14 +36,22 @@ public class Shifts {
         return location;
     }
 
-    public Shifts(String id, String name, String location, String date, String ShiftID) {
+    public Shifts(String id, String name, String location, String date, String ShiftID, String email) {
         this.id = id;
         this.name = name;
         this.location = location;
         this.date = date;
         this.ShiftID = ShiftID;
+        this.email = email;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public Shifts()
     {
