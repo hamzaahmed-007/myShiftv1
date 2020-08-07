@@ -84,7 +84,7 @@ public class AboutAcitivity extends AppCompatActivity {
 
         about = findViewById(R.id.aboutText);
         about.setText("myShift" +
-                "\n\nV 2.1.7" +
+                "\n\nV 2.1.8" +
                 "\n\nCreated by Hamza Ahmed Butt" +
                 "\n\nfor XYZ");
 

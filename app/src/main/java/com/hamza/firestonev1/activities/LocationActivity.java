@@ -83,7 +83,7 @@ public class LocationActivity extends AppCompatActivity {
         mResultlist = findViewById(R.id.locationResult);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Search Shifts by name");
+        getSupportActionBar().setTitle("Search by location");
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.nav_bottom);
         bottomNavigationView.setOnNavigationItemSelectedListener(mONListener);

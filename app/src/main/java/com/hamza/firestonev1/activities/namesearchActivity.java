@@ -85,7 +85,7 @@ public class namesearchActivity extends AppCompatActivity {
         searchbutton = findViewById(R.id.buttonDateSearch);
         mResultlist = findViewById(R.id.result_list);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Search Shifts by name");
+        getSupportActionBar().setTitle("Search by name");
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.nav_bottom);
         bottomNavigationView.setOnNavigationItemSelectedListener(mONListener);
